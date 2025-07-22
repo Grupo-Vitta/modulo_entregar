@@ -1,0 +1,23 @@
+<odoo>
+  <!-- Menú raíz -->
+  <menuitem id="menu_shipping_root"
+            name="Logística"
+            sequence="10"/>
+
+  <!-- Acción al wizard (ya definida en shipping_wizard_view.xml) -->
+  <!-- Reutilizamos: action_shipping_wizard -->
+
+  <!-- Menú hijo: acceso al wizard -->
+    <menuitem id="menu_shipping_wizard"
+            name="Nuevo Envío"
+            parent="menu_shipping_root"
+            action="action_shipping_wizard"
+            sequence="20"/>
+
+    <menuitem id="menu_shipping_status"
+            name="Estado de Envío"
+            parent="menu_shipping_root"
+            action="action_shipping_status_wizard"
+            sequence="30"/>
+
+</odoo>

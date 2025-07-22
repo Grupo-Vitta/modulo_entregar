@@ -1,0 +1,31 @@
+<odoo>
+  <record id="view_shipping_status_wizard_form" model="ir.ui.view">
+    <field name="name">shipping.status.wizard.form</field>
+    <field name="model">shipping.status.wizard</field>
+    <field name="arch" type="xml">
+      <form string="Consultar Estado de Envío">
+        <group>
+          <field name="code"/>
+          <button string="Consultar" type="object" name="action_consultar_estado" class="btn-primary"/>
+        </group>
+        <separator string="Resultado"/>
+        <group>
+          <field name="receives"/>
+          <field name="address"/>
+          <field name="location"/>
+          <field name="postal_code"/>
+          <field name="bultos"/>
+          <field name="state"/>
+          <field name="date"/>
+        </group>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_shipping_status_wizard" model="ir.actions.act_window">
+    <field name="name">Estado de Envío</field>
+    <field name="res_model">shipping.status.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+  </record>
+</odoo>

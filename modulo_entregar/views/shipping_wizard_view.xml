@@ -1,0 +1,41 @@
+<odoo>
+  <record id="view_shipping_wizard_form" model="ir.ui.view">
+    <field name="name">shipping.wizard.form</field>
+    <field name="model">shipping.wizard</field>
+    <field name="arch" type="xml">
+      <form string="Crear Envío Logístico">
+        <group>
+          <field name="receives"/>
+          <field name="address"/>
+          <field name="location"/>
+          <field name="postal_code"/>
+          <field name="province_id"/>
+          <field name="reference"/>
+          <field name="items"/>
+          <field name="telephone"/>
+          <field name="email"/>
+          <field name="external_reference"/>
+          <field name="bultos"/>
+        </group>
+
+        <group>
+          <field name="lat" readonly="1"/>
+          <field name="lng" readonly="1"/>
+          <button string="📍 Obtener Geolocalización" type="object" name="action_obtener_geolocalizacion" class="btn-primary"/>
+        </group>
+
+        <group>
+          <button string="🚚 Crear Envío" type="object" name="action_crear_envio" class="btn-success"/>
+          <field name="envio_code" readonly="1"/>
+        </group>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_shipping_wizard" model="ir.actions.act_window">
+    <field name="name">Envíos Logísticos</field>
+    <field name="res_model">shipping.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+  </record>
+</odoo>
